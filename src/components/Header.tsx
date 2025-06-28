@@ -1,12 +1,14 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/useTheme";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -22,7 +24,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
+    <header className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50 dark:bg-gray-900/95 light:bg-white/95 light:border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
@@ -31,7 +33,7 @@ const Header = () => {
               alt="PlantechX" 
               className="h-8 w-8"
             />
-            <span className="text-white font-bold text-xl">PlantechX</span>
+            <span className="text-white font-bold text-xl dark:text-white light:text-gray-900">PlantechX</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,7 +45,7 @@ const Header = () => {
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   isActive(link.path)
                     ? "text-green-400 bg-green-400/10"
-                    : "text-gray-300 hover:text-white hover:bg-gray-800"
+                    : "text-gray-300 hover:text-white hover:bg-gray-800 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800 light:text-gray-600 light:hover:text-gray-900 light:hover:bg-gray-100"
                 }`}
               >
                 {link.label}
@@ -52,6 +54,14 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
+            <Button
+              onClick={toggleTheme}
+              variant="ghost"
+              size="icon"
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900"
+            >
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Button asChild variant="outline" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900">
               <Link to="/platform">Try Platform</Link>
             </Button>
@@ -61,17 +71,27 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-gray-300 hover:text-white"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center space-x-2">
+            <Button
+              onClick={toggleTheme}
+              variant="ghost"
+              size="icon"
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900"
+            >
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-800">
+          <div className="lg:hidden py-4 border-t border-gray-800 dark:border-gray-800 light:border-gray-200">
             <nav className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
@@ -81,7 +101,7 @@ const Header = () => {
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(link.path)
                       ? "text-green-400 bg-green-400/10"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800"
+                      : "text-gray-300 hover:text-white hover:bg-gray-800 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800 light:text-gray-600 light:hover:text-gray-900 light:hover:bg-gray-100"
                   }`}
                 >
                   {link.label}
