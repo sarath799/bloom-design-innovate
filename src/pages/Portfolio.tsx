@@ -19,7 +19,7 @@ const Portfolio = () => {
       title: "Tech Startup Logo",
       category: "Logo Design",
       description: "Clean, modern logo design for AI technology startup",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
       tags: ["Brand Identity", "Logo", "Tech"]
     },
     {
@@ -47,7 +47,7 @@ const Portfolio = () => {
       title: "Mobile App Interface",
       category: "Mobile Design",
       description: "Clean and intuitive mobile app design for productivity application",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
       tags: ["Mobile UI", "App Design", "Productivity"]
     }
   ];
@@ -55,19 +55,19 @@ const Portfolio = () => {
   const categories = ["All", "Website", "Logo Design", "UI/UX Design", "E-commerce", "Branding", "Mobile Design"];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white transition-colors duration-300">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-800 dark:from-green-400 dark:to-green-600 bg-clip-text text-transparent">
             Our Portfolio
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
             Showcasing our best work across web development, design, and branding
           </p>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">
             Every project tells a story of innovation, creativity, and client success
           </p>
         </div>
@@ -82,8 +82,8 @@ const Portfolio = () => {
                 key={index}
                 variant={index === 0 ? "default" : "outline"}
                 className={index === 0 
-                  ? "bg-green-400 text-gray-900 hover:bg-green-500" 
-                  : "border-gray-600 text-gray-300 hover:border-green-400 hover:text-green-400"
+                  ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-green-500 dark:text-gray-900 dark:hover:bg-green-600" 
+                  : "border-gray-300 text-gray-700 hover:border-blue-500 hover:text-blue-600 dark:border-gray-600 dark:text-gray-300 dark:hover:border-green-400 dark:hover:text-green-400"
                 }
               >
                 {category}
@@ -98,7 +98,7 @@ const Portfolio = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioItems.map((item, index) => (
-              <Card key={index} className="bg-gray-800 border-gray-700 hover:border-green-400 transition-all duration-300 group overflow-hidden">
+              <Card key={index} className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-green-400 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl">
                 <div className="relative overflow-hidden">
                   <img
                     src={item.image}
@@ -107,7 +107,7 @@ const Portfolio = () => {
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-2">
-                      <Button size="sm" className="bg-green-400 text-gray-900 hover:bg-green-500">
+                      <Button size="sm" className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-green-500 dark:text-gray-900 dark:hover:bg-green-600">
                         <Eye className="h-4 w-4 mr-1" />
                         View
                       </Button>
@@ -120,17 +120,17 @@ const Portfolio = () => {
                 </div>
                 <CardContent className="p-6">
                   <div className="mb-2">
-                    <span className="bg-green-400/20 text-green-400 px-2 py-1 rounded text-xs font-medium">
+                    <span className="bg-blue-100 text-blue-800 dark:bg-green-400/20 dark:text-green-400 px-2 py-1 rounded text-xs font-medium">
                       {item.category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400 mb-4">{item.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">{item.description}</p>
                   <div className="flex flex-wrap gap-1">
                     {item.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs"
+                        className="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs"
                       >
                         {tag}
                       </span>
@@ -144,24 +144,24 @@ const Portfolio = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-gray-800/50">
+      <section className="py-16 px-4 bg-blue-50 dark:bg-gray-800/50">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-green-400 mb-2">150+</div>
-              <div className="text-gray-300">Projects Completed</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-green-400 mb-2">150+</div>
+              <div className="text-gray-700 dark:text-gray-300">Projects Completed</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-400 mb-2">120+</div>
-              <div className="text-gray-300">Happy Clients</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-green-400 mb-2">120+</div>
+              <div className="text-gray-700 dark:text-gray-300">Happy Clients</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-400 mb-2">50+</div>
-              <div className="text-gray-300">Websites Launched</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-green-400 mb-2">50+</div>
+              <div className="text-gray-700 dark:text-gray-300">Websites Launched</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-400 mb-2">100+</div>
-              <div className="text-gray-300">Designs Created</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-green-400 mb-2">100+</div>
+              <div className="text-gray-700 dark:text-gray-300">Designs Created</div>
             </div>
           </div>
         </div>
@@ -171,8 +171,8 @@ const Portfolio = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-300">Real feedback from real projects</p>
+            <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">What Our Clients Say</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Real feedback from real projects</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -193,12 +193,12 @@ const Portfolio = () => {
                 company: "Tech Startup CEO"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-gray-800 border-gray-700">
+              <Card key={index} className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg">
                 <CardContent className="p-6">
-                  <p className="text-gray-300 mb-4 italic">"{testimonial.quote}"</p>
-                  <div className="border-t border-gray-700 pt-4">
-                    <p className="text-white font-semibold">{testimonial.author}</p>
-                    <p className="text-gray-400 text-sm">{testimonial.company}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 italic">"{testimonial.quote}"</p>
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <p className="text-gray-900 dark:text-white font-semibold">{testimonial.author}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -208,17 +208,17 @@ const Portfolio = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-green-400/10 to-blue-400/10">
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-100 to-blue-50 dark:from-green-400/10 dark:to-green-600/10">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Create Your Success Story?</h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Create Your Success Story?</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
             Let's discuss your project and bring your vision to life
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-400 text-gray-900 hover:bg-green-500">
+            <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-green-500 dark:text-gray-900 dark:hover:bg-green-600">
               Start Your Project
             </Button>
-            <Button variant="outline" size="lg" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900">
+            <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-gray-900">
               View All Work
             </Button>
           </div>
