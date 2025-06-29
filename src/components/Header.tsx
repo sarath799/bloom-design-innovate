@@ -24,16 +24,16 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50 dark:bg-gray-900/95 light:bg-white/95 light:border-gray-200">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 z-50 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 hover-scale">
             <img 
               src="/lovable-uploads/4fcbd902-893f-407a-aa1d-f94982a29e7f.png" 
               alt="PlantechX" 
               className="h-8 w-8"
             />
-            <span className="text-white font-bold text-xl dark:text-white light:text-gray-900">PlantechX</span>
+            <span className="text-gray-900 dark:text-white font-bold text-xl">PlantechX</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,10 +42,10 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors hover-scale ${
                   isActive(link.path)
-                    ? "text-green-400 bg-green-400/10"
-                    : "text-gray-300 hover:text-white hover:bg-gray-800 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800 light:text-gray-600 light:hover:text-gray-900 light:hover:bg-gray-100"
+                    ? "text-blue-600 dark:text-green-400 bg-blue-50 dark:bg-green-400/10"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                 }`}
               >
                 {link.label}
@@ -58,14 +58,14 @@ const Header = () => {
               onClick={toggleTheme}
               variant="ghost"
               size="icon"
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-green-400 hover-scale"
             >
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <Button asChild variant="outline" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900">
+            <Button asChild variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-gray-900 hover-scale">
               <Link to="/platform">Try Platform</Link>
             </Button>
-            <Button asChild className="bg-green-400 text-gray-900 hover:bg-green-500">
+            <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-green-400 dark:text-gray-900 dark:hover:bg-green-500 hover-scale">
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
@@ -76,13 +76,13 @@ const Header = () => {
               onClick={toggleTheme}
               variant="ghost"
               size="icon"
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-green-400"
             >
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-green-400"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -91,7 +91,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-800 dark:border-gray-800 light:border-gray-200">
+          <div className="lg:hidden py-4 border-t border-gray-200 dark:border-gray-800 animate-fade-in">
             <nav className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
@@ -100,18 +100,18 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(link.path)
-                      ? "text-green-400 bg-green-400/10"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800 light:text-gray-600 light:hover:text-gray-900 light:hover:bg-gray-100"
+                      ? "text-blue-600 dark:text-green-400 bg-blue-50 dark:bg-green-400/10"
+                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button asChild variant="outline" className="border-green-400 text-green-400">
+                <Button asChild variant="outline" className="border-blue-600 text-blue-600 dark:border-green-400 dark:text-green-400">
                   <Link to="/platform">Try Platform</Link>
                 </Button>
-                <Button asChild className="bg-green-400 text-gray-900">
+                <Button asChild className="bg-blue-600 text-white dark:bg-green-400 dark:text-gray-900">
                   <Link to="/contact">Get Started</Link>
                 </Button>
               </div>

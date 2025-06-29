@@ -15,7 +15,7 @@ const Packages = () => {
       ideal: "Freelancers, Coaches",
       features: [
         "1-page responsive website",
-        "Custom logo design",
+        "Custom logo design", 
         "Contact form integration",
         "Mobile responsive design",
         "Basic SEO optimization",
@@ -71,19 +71,19 @@ const Packages = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-4">
+      <section className="pt-24 pb-12 px-4 animate-fade-in">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-            Our Packages
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-500 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent">
+            Bundle Packages
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
             Budget-friendly packages tailored for different needs
           </p>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">
             Choose the perfect package to kickstart your digital presence
           </p>
         </div>
@@ -94,33 +94,33 @@ const Packages = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {packages.map((pkg, index) => (
-              <Card key={index} className={`bg-gray-800 border-gray-700 hover:border-green-400 transition-all duration-300 relative ${pkg.popular ? 'ring-2 ring-green-400' : ''}`}>
+              <Card key={index} className={`bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-green-400 transition-all duration-300 hover-scale relative ${pkg.popular ? 'ring-2 ring-blue-500 dark:ring-green-400' : ''}`}>
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-green-400 text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-blue-600 dark:bg-green-400 text-white dark:text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
                 )}
                 <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl font-bold text-white">{pkg.name}</CardTitle>
-                  <div className="text-4xl font-bold text-green-400 my-2">{pkg.price}</div>
-                  <p className="text-gray-400">Ideal for {pkg.ideal}</p>
+                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">{pkg.name}</CardTitle>
+                  <div className="text-4xl font-bold text-blue-600 dark:text-green-400 my-2">{pkg.price}</div>
+                  <p className="text-gray-600 dark:text-gray-400">Ideal for {pkg.ideal}</p>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-3">
                     {pkg.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                        <CheckCircle className="h-5 w-5 text-blue-600 dark:text-green-400 mr-3 flex-shrink-0" />
+                        <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
                   <div className="space-y-3 pt-4">
-                    <Button asChild className="w-full bg-green-400 text-gray-900 hover:bg-green-500">
+                    <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-green-400 dark:hover:bg-green-500 dark:text-gray-900 text-white hover-scale">
                       <Link to="/contact">Choose This Package</Link>
                     </Button>
-                    <Button variant="outline" className="w-full border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900">
+                    <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-gray-900 hover-scale">
                       <MessageSquare className="h-4 w-4 mr-2" />
                       Discuss Requirements
                     </Button>
@@ -133,33 +133,33 @@ const Packages = () => {
       </section>
 
       {/* Custom Solutions */}
-      <section className="py-16 px-4 bg-gray-800/50">
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Need Something Custom?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Don't see exactly what you need? We create custom solutions tailored to your specific requirements and budget.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-2">Enterprise Websites</h3>
-              <p className="text-gray-400">Large-scale websites with advanced functionality</p>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg hover-scale">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Enterprise Websites</h3>
+              <p className="text-gray-600 dark:text-gray-400">Large-scale websites with advanced functionality</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-2">E-learning Platforms</h3>
-              <p className="text-gray-400">Custom learning management systems</p>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg hover-scale">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">E-learning Platforms</h3>
+              <p className="text-gray-600 dark:text-gray-400">Custom learning management systems</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-2">Complex Integrations</h3>
-              <p className="text-gray-400">API integrations and third-party connections</p>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg hover-scale">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Complex Integrations</h3>
+              <p className="text-gray-600 dark:text-gray-400">API integrations and third-party connections</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-green-400 text-gray-900 hover:bg-green-500">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-green-400 dark:hover:bg-green-500 dark:text-gray-900 text-white hover-scale">
               <Link to="/contact">Request Custom Quote</Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900">
+            <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-gray-900 hover-scale">
               <Download className="h-4 w-4 mr-2" />
-              Download Packages PDF
+              Download Package PDF
             </Button>
           </div>
         </div>
@@ -170,7 +170,7 @@ const Packages = () => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Why Choose Our Packages?</h2>
-            <p className="text-xl text-gray-300">Transparent pricing, exceptional value</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Transparent pricing, exceptional value</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -180,10 +180,10 @@ const Packages = () => {
               { title: "Unlimited Revisions", desc: "We work until you're 100% satisfied" },
               { title: "Ongoing Support", desc: "Free support period included" }
             ].map((benefit, index) => (
-              <div key={index} className="text-center p-6 bg-gray-800 rounded-lg">
-                <CheckCircle className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.desc}</p>
+              <div key={index} className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover-scale">
+                <CheckCircle className="h-12 w-12 text-blue-600 dark:text-green-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{benefit.desc}</p>
               </div>
             ))}
           </div>
@@ -191,17 +191,17 @@ const Packages = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-green-400/10 to-blue-400/10">
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-green-50 dark:from-green-400/10 dark:to-blue-400/10 transition-colors duration-300">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
             Choose your package and let's bring your vision to life
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-green-400 text-gray-900 hover:bg-green-500">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-green-400 dark:hover:bg-green-500 dark:text-gray-900 text-white hover-scale">
               <Link to="/contact">Get Started Today</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900">
+            <Button asChild variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-gray-900 hover-scale">
               <Link to="/portfolio">See Our Work</Link>
             </Button>
           </div>
