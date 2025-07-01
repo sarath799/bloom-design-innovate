@@ -27,13 +27,19 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 z-50 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2 hover-scale">
-            <img 
-              src="/lovable-uploads/4fcbd902-893f-407a-aa1d-f94982a29e7f.png" 
-              alt="PlantechX" 
-              className="h-8 w-8"
-            />
-            <span className="text-gray-900 dark:text-white font-bold text-xl">PlantechX</span>
+          <Link to="/" className="flex items-center space-x-3 hover-scale">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/4fcbd902-893f-407a-aa1d-f94982a29e7f.png" 
+                alt="PlantechX Logo" 
+                className="h-10 w-10 object-contain"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-gray-900 dark:text-white font-bold text-xl tracking-tight antialiased">
+                PlantechX
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

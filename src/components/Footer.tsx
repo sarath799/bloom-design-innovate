@@ -9,18 +9,24 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/4fcbd902-893f-407a-aa1d-f94982a29e7f.png" 
-                alt="PlantechX" 
-                className="h-8 w-8"
-              />
-              <span className="text-gray-900 dark:text-white font-bold text-xl">PlantechX</span>
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/4fcbd902-893f-407a-aa1d-f94982a29e7f.png" 
+                  alt="PlantechX Logo" 
+                  className="h-10 w-10 object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-gray-900 dark:text-white font-bold text-xl tracking-tight antialiased">
+                  PlantechX
+                </span>
+              </div>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">
+            <p className="text-blue-600 dark:text-green-400 text-sm font-semibold">
               Training. Designing. Launching.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
               From AI-powered examination systems to stunning business websites — PlantechX fuels growth for educators, startups, and creators.
             </p>
           </div>
