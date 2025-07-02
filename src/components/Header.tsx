@@ -14,8 +14,10 @@ const Header = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
+    { path: "/features", label: "Features" },
     { path: "/platform", label: "Training Platform" },
     { path: "/studio", label: "PlantechX Studio" },
+    { path: "/portals", label: "College & Student Portals" },
     { path: "/institutions", label: "For Institutions" },
     { path: "/packages", label: "Packages" },
     { path: "/portfolio", label: "Portfolio" },
