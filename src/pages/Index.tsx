@@ -21,6 +21,8 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
+  console.log("Index page is rendering");
+  
   const partnerLogos = [
     { name: "College A", logo: "🎓" },
     { name: "College B", logo: "🏛️" },
@@ -58,6 +60,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+      {console.log("Rendering Index page content")}
       <Header />
       
       {/* Hero Section */}

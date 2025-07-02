@@ -18,28 +18,33 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/portals" element={<Portals />} />
-          <Route path="/platform" element={<Platform />} />
-          <Route path="/studio" element={<Studio />} />
-          <Route path="/institutions" element={<Institutions />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  console.log("App component is rendering");
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          {console.log("BrowserRouter is active")}
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/portals" element={<Portals />} />
+            <Route path="/platform" element={<Platform />} />
+            <Route path="/studio" element={<Studio />} />
+            <Route path="/institutions" element={<Institutions />} />
+            <Route path="/packages" element={<Packages />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
