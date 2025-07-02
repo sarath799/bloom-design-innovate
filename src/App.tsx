@@ -27,7 +27,6 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {console.log("BrowserRouter is active")}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/features" element={<Features />} />
