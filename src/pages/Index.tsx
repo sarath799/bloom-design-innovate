@@ -1,11 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Users, 
   Calendar, 
   BookOpen, 
-  PresentationChart, 
+  Presentation, 
   Palette, 
   Award,
   TrendingUp,
@@ -33,7 +32,7 @@ const Index = () => {
     {
       title: "Training Dashboard",
       description: "Real-time analytics for all training programs",
-      icon: PresentationChart,
+      icon: Presentation,
       color: "from-blue-500 to-blue-600"
     },
     {
