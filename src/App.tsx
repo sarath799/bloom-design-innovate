@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,30 +15,41 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
+// ✅ Import LeadForm
+import LeadForm from "./LeadForm";
+
 const queryClient = new QueryClient();
 
 const App = () => {
   console.log("App component is rendering");
-  
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/features" element={<Features />} />
-            <Route path="/portals" element={<Portals />} />
-            <Route path="/platform" element={<Platform />} />
-            <Route path="/studio" element={<Studio />} />
-            <Route path="/institutions" element={<Institutions />} />
-            <Route path="/packages" element={<Packages />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <div>
+            {/* React Router pages */}
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/features" element={<Features />} />
+              <Route path="/portals" element={<Portals />} />
+              <Route path="/platform" element={<Platform />} />
+              <Route path="/studio" element={<Studio />} />
+              <Route path="/institutions" element={<Institutions />} />
+              <Route path="/packages" element={<Packages />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+
+            {/* ✅ Added LeadForm directly in App */}
+            <LeadForm />
+
+            {/* Maybe add a footer here later */}
+          </div>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
@@ -47,3 +57,4 @@ const App = () => {
 };
 
 export default App;
+
